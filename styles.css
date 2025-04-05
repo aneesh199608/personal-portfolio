@@ -81,6 +81,19 @@
     margin-bottom: 0.5rem;
   }
   
+  /* --- Link Wrapper for Project Cards --- */
+  
+  .project-card-link {
+    display: block; /* Make the link fill the container */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color from parent */
+    border-radius: 12px; /* Match card border-radius for focus outline */
+  }
+  
+  .project-card-link:focus-visible {
+     outline: 2px solid var(--text-color); /* Add focus style */
+     outline-offset: 2px;
+  }
   .hero-text p {
     font-size: 1.1rem;
     max-width: 600px;
@@ -198,4 +211,66 @@
     padding: 2rem 0;
     text-align: center;
     font-size: 0.875rem;
+  }
+  
+  /* --- Project Detail Page Styles --- */
+  
+  .project-detail-page {
+    max-width: 800px; /* Constrain width for readability */
+    margin: 2rem auto 4rem auto; /* Center content, add top/bottom margin */
+    padding: 0 1rem; /* Add padding on smaller screens */
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  .back-link:hover {
+    opacity: 1;
+  }
+  
+  .project-content h1 {
+    font-size: 2.5rem; /* Larger title for project page */
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  .project-summary {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+  
+  .project-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .project-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3); /* Subtle separator */
+    padding-bottom: 0.5rem;
+  }
+  
+  .project-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem; /* Space between paragraphs within a section */
+  }
+  
+  /* Add styles for lists, images, etc. within sections if needed */
+  .project-section ul,
+  .project-section ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-section li {
+    margin-bottom: 0.5rem;
   }
