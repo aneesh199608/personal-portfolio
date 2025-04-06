@@ -1,4 +1,4 @@
-import { createNavbar } from '/src/components/Navbar/Navbar.js';
+import { createNavbar } from './src/components/Navbar/Navbar.js';
 
 // --- Theme Handling ---
 

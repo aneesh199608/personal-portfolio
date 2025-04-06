@@ -1,1 +1,1 @@
-export { createNavbar } from '/src/components/Navbar/Navbar.js';
+export { createNavbar } from './Navbar.js';
