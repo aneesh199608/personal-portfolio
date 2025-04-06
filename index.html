@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aneesh AR</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <script defer src="script.js"></script> <!-- Removed type="module" -->
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">YourName</div>
+      <div class="logo">Aneesh</div> <!-- Or use an <a> tag if logo should link home -->
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="https://your-drive-resume-link" target="_blank">Resume</a></li>
+        <li><a href="#">Home</a></li> <!-- Simple hash for index home -->
+        <li><a href="#work">Work</a></li> <!-- Link to work section -->
+        <li><a href="#about">About</a></li> <!-- Link to about section (add section if needed) -->
+        <li><a href="https://your-drive-resume-link" target="_blank">Resume</a></li> <!-- External link -->
       </ul>
       <button id="themeToggle">🌓</button>
     </nav>
@@ -24,7 +24,7 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <img src="your-photo.jpg" alt="Your photo" class="hero-image" />
+      <img src="src/images/your-photo.jpg" alt="Your photo" class="hero-image" /> <!-- Assuming photo is in src/images -->
       <div class="hero-text">
         <h1>Hello, I'm Your Name</h1>
         <p>I design beautiful interfaces and engineer delightful experiences using code + AI.</p>
@@ -37,7 +37,7 @@
       <!-- Renamed container back to 'projects' -->
       <div class="projects work-projects">
         <!-- Project 1: Optimizing Course Discovery -->
-        <a href="assets/projects/growthschool.html" class="project-card-link"> <!-- Link updated to growthschool.html -->
+        <a href="src/projects/growthschool.html" class="project-card-link"> <!-- Link updated to growthschool.html -->
           <div class="project-card project-layout-split">
             <div class="project-details">
               <!-- Add icon placeholder if needed -->
@@ -49,13 +49,13 @@
             </div>
           </div>
           <div class="project-image-container">
-            <img src="assets/images/elementor-placeholder-image.webp" alt="Optimizing Course Discovery project screenshot" class="project-thumbnail">
+            <img src="src/images/elementor-placeholder-image.webp" alt="Optimizing Course Discovery project screenshot" class="project-thumbnail">
           </div>
         </div>
         </a> <!-- Link closed -->
 
         <!-- Project 2: VR Training -->
-        <a href="assets/projects/project-vr-training.html" class="project-card-link"> <!-- Link added -->
+        <a href="src/projects/project-vr-training.html" class="project-card-link"> <!-- Link added -->
           <div class="project-card project-layout-split">
             <div class="project-details">
               <!-- Add icon placeholder if needed -->
@@ -67,13 +67,13 @@
             </div>
           </div>
           <div class="project-image-container">
-            <img src="assets/images/elementor-placeholder-image.webp" alt="VR Training project screenshot" class="project-thumbnail">
+            <img src="src/images/elementor-placeholder-image.webp" alt="VR Training project screenshot" class="project-thumbnail">
           </div>
         </div>
         </a> <!-- Link closed -->
 
         <!-- Project 3: Simplifying Print & Mail -->
-        <a href="assets/projects/project-print-mail.html" class="project-card-link"> <!-- Link added -->
+        <a href="src/projects/project-print-mail.html" class="project-card-link"> <!-- Link added -->
           <div class="project-card project-layout-split">
             <div class="project-details">
               <!-- Add icon placeholder if needed -->
@@ -86,13 +86,13 @@
             </div>
           </div>
           <div class="project-image-container">
-            <img src="assets/images/elementor-placeholder-image.webp" alt="Print & Mail project screenshot" class="project-thumbnail">
+            <img src="src/images/elementor-placeholder-image.webp" alt="Print & Mail project screenshot" class="project-thumbnail">
           </div>
         </div>
         </a> <!-- Link closed -->
 
         <!-- Project 4: GrowthSchool Platform -->
-        <a href="assets/projects/growthschool.html" class="project-card-link"> <!-- Link path updated to growthschool.html -->
+        <a href="src/projects/growthschool.html" class="project-card-link"> <!-- Link path updated to growthschool.html -->
           <div class="project-card project-layout-split">
             <div class="project-details">
               <!-- Add icon placeholder if needed -->
@@ -105,7 +105,7 @@
               </div>
             </div>
             <div class="project-image-container">
-              <img src="assets/images/placeholder4.jpg" alt="GrowthSchool project screenshot" class="project-thumbnail">
+              <img src="src/images/placeholder4.jpg" alt="GrowthSchool project screenshot" class="project-thumbnail">
             </div>
           </div>
         </a> <!-- Link closed -->
