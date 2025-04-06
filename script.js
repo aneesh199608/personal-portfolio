@@ -1,4 +1,4 @@
-// script.js
+import { createNavbar } from '/src/components/Navbar/Navbar.js';
 
 // --- Theme Handling ---
 
@@ -30,6 +30,12 @@ applySavedTheme();
 // --- Attach Event Listeners ---
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize Navbar
+  const navbarContainer = document.getElementById('navbar-container');
+  if (navbarContainer) {
+    createNavbar(navbarContainer);
+  }
+
   // Find the theme toggle button (assuming it exists in the loaded HTML)
   const toggleBtn = document.getElementById("themeToggle");
 
@@ -39,6 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Optional: Log a warning if the button isn't found on a page
     // console.warn("Theme toggle button (#themeToggle) not found on this page.");
   }
-
-  // No navigation loading needed here anymore
 });

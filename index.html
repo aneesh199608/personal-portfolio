@@ -5,21 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aneesh AR</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script> <!-- Removed type="module" -->
+  <link rel="stylesheet" href="/src/components/Navbar/Navbar.css" />
+  <script type="module" src="script.js"></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Aneesh</div> <!-- Or use an <a> tag if logo should link home -->
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li> <!-- Simple hash for index home -->
-        <li><a href="#work">Work</a></li> <!-- Link to work section -->
-        <li><a href="#about">About</a></li> <!-- Link to about section (add section if needed) -->
-        <li><a href="https://your-drive-resume-link" target="_blank">Resume</a></li> <!-- External link -->
-      </ul>
-      <button id="themeToggle">🌓</button>
-    </nav>
-  </header>
+  <header id="navbar-container"></header>
 
   <main>
     <!-- Hero Section -->
