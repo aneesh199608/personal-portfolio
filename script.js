@@ -1,4 +1,5 @@
-import { createNavbar } from './src/components/Navbar/Navbar.js';
+import { createNavbar } from './src/components/Navbar/Navbar.js'; // Reverted import path
+import { preloadProjectPages } from './src/projects/projects.js';
 
 // --- Theme Handling ---
 
@@ -27,26 +28,6 @@ function toggleTheme() {
 // Apply theme immediately on script load
 applySavedTheme();
 
-function preloadProjectPages() {
-  const projectLinks = document.querySelectorAll('.project-card-link');
-  projectLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href) {
-      fetch(href)
-        .then(response => {
-          if (response.ok) {
-            // Cache the response
-            return response.text();
-          }
-          throw new Error(`Failed to preload ${href}`);
-        })
-        .catch(error => {
-          console.error('Preloading error:', error);
-        });
-    }
-  });
-}
-
 // --- Attach Event Listeners ---
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -63,8 +44,5 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.addEventListener("click", toggleTheme);
   }
 
-  // Preload project pages
-  if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
-    preloadProjectPages();
-  }
+  // No change needed here as preloadProjectPages is already being called
 });
