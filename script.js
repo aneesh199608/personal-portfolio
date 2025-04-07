@@ -27,6 +27,26 @@ function toggleTheme() {
 // Apply theme immediately on script load
 applySavedTheme();
 
+function preloadProjectPages() {
+  const projectLinks = document.querySelectorAll('.project-card-link');
+  projectLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href) {
+      fetch(href)
+        .then(response => {
+          if (response.ok) {
+            // Cache the response
+            return response.text();
+          }
+          throw new Error(`Failed to preload ${href}`);
+        })
+        .catch(error => {
+          console.error('Preloading error:', error);
+        });
+    }
+  });
+}
+
 // --- Attach Event Listeners ---
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,8 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (toggleBtn) {
     toggleBtn.addEventListener("click", toggleTheme);
-  } else {
-    // Optional: Log a warning if the button isn't found on a page
-    // console.warn("Theme toggle button (#themeToggle) not found on this page.");
+  }
+
+  // Preload project pages
+  if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+    preloadProjectPages();
   }
 });
