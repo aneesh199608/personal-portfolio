@@ -17,9 +17,9 @@ export function createNavbar(container) {
   navLinks.className = 'nav-links';
 
   const links = [
-    { text: 'Home', href: '#' },
-    { text: 'Work', href: '#work' },
-    { text: 'About', href: '#about' },
+    { text: 'Home', href: 'index.html' }, // Updated href
+    { text: 'Work', href: 'index.html#work' }, // Keep linking to section on home page
+    { text: 'About', href: 'about.html' }, // Updated href
     { text: 'Resume', href: 'https://your-drive-resume-link', target: '_blank' }
   ];
 
