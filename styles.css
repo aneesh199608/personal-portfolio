@@ -7,13 +7,17 @@
   
   html[data-theme="dark"] {
     --bg-color: #0f0f0f;
+    --bg-color-rgb: 15, 15, 15; /* Added RGB version */
     --text-color: #f5f5f5;
+    --text-color-rgb: 245, 245, 245; /* Added RGB version */
     --card-bg: #1a1a1a;
   }
   
   html[data-theme="light"] {
     --bg-color: #ffffff;
+    --bg-color-rgb: 255, 255, 255; /* Added RGB version */
     --text-color: #111111;
+    --text-color-rgb: 17, 17, 17; /* Added RGB version */
     --card-bg: #f2f2f2;
   }
   
