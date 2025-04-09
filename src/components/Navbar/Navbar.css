@@ -1,23 +1,21 @@
-/* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem; /* Adjusted internal padding */
+  padding: 1rem 1.5rem;
 
-  /* Fixed, Centered, Styled */
   position: fixed;
-  top: 1rem; /* Space from top */
+  top: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 600px; /* Reduced width */
-  width: 90%; /* Fallback width for smaller screens */
+  max-width: 600px;
+  width: 90%;
   z-index: 1000;
-  background-color: rgba(var(--bg-color-rgb), 0.85); /* Semi-transparent background */
-  backdrop-filter: blur(8px); /* Blur effect */
-  -webkit-backdrop-filter: blur(8px); /* Safari compatibility */
-  border-radius: 12px; /* Rounded corners */
-  border: 1px solid rgba(var(--text-color-rgb), 0.1); /* Subtle border */
+  background-color: rgba(var(--bg-color-rgb), 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(var(--text-color-rgb), 0.1);
 }
 
 .nav-links {

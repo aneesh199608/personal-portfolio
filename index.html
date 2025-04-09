@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aneesh AR</title>
   <script>
-    // Apply saved theme immediately before paint
     (function () {
       const savedTheme = localStorage.getItem("theme") || "dark";
       document.documentElement.setAttribute("data-theme", savedTheme);
@@ -20,25 +19,20 @@
   <header id="navbar-container"></header>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero">
-      <img src="src/images/your-photo.jpg" alt="Your photo" class="hero-image" /> <!-- Assuming photo is in src/images -->
+      <img src="./src/images/aneesh-3d-avatar.png" alt="Your photo" class="hero-image" />
       <div class="hero-text">
         <h1>Hello, I'm Your Name</h1>
         <p>I design beautiful interfaces and engineer delightful experiences using code + AI.</p>
       </div>
     </section>
 
-    <!-- Work Section -->
     <section class="work" id="work">
       <h2>Selected Work</h2>
-      <!-- Renamed container back to 'projects' -->
       <div class="projects work-projects">
-        <!-- Project 1: Optimizing Course Discovery -->
-        <a href="src/projects/growthschool.html" class="project-card-link"> <!-- Link updated to growthschool.html -->
+        <a href="src/projects/growthschool.html" class="project-card-link">
           <div class="project-card project-layout-split">
             <div class="project-details">
-              <!-- Add icon placeholder if needed -->
               <h3 class="project-title">Optimizing Course Discovery for Growth</h3>
             <p class="project-description">Led the product discovery initiative, increasing revenue through improved course visibility.</p>
             <div class="project-tags">
@@ -50,13 +44,11 @@
             <img src="src/images/elementor-placeholder-image.webp" alt="Optimizing Course Discovery project screenshot" class="project-thumbnail">
           </div>
         </div>
-        </a> <!-- Link closed -->
+        </a>
 
-        <!-- Project 2: VR Training -->
-        <a href="src/projects/project-vr-training.html" class="project-card-link"> <!-- Link added -->
+        <a href="src/projects/project-vr-training.html" class="project-card-link">
           <div class="project-card project-layout-split">
             <div class="project-details">
-              <!-- Add icon placeholder if needed -->
               <h3 class="project-title">VR Training for Safer Healthcare</h3>
             <p class="project-description">Leveraging VR to Enhance Confidence, and Preparedness for Healthcare Workers in violent (Code White) situations</p>
             <div class="project-tags">
@@ -68,13 +60,11 @@
             <img src="src/images/elementor-placeholder-image.webp" alt="VR Training project screenshot" class="project-thumbnail">
           </div>
         </div>
-        </a> <!-- Link closed -->
+        </a>
 
-        <!-- Project 3: Simplifying Print & Mail -->
-        <a href="src/projects/project-print-mail.html" class="project-card-link"> <!-- Link added -->
+        <a href="src/projects/project-print-mail.html" class="project-card-link">
           <div class="project-card project-layout-split">
             <div class="project-details">
-              <!-- Add icon placeholder if needed -->
               <h3 class="project-title">Simplifying Print & Mail for Legal Teams</h3>
             <p class="project-description">Led research and design for a high-impact SaaS platform that streamlined operations, and improved clarity.</p>
             <div class="project-tags">
@@ -87,13 +77,11 @@
             <img src="src/images/elementor-placeholder-image.webp" alt="Print & Mail project screenshot" class="project-thumbnail">
           </div>
         </div>
-        </a> <!-- Link closed -->
+        </a>
 
-        <!-- Project 4: GrowthSchool Platform -->
-        <a href="src/projects/growthschool.html" class="project-card-link"> <!-- Link path updated to growthschool.html -->
+        <a href="src/projects/growthschool.html" class="project-card-link">
           <div class="project-card project-layout-split">
             <div class="project-details">
-              <!-- Add icon placeholder if needed -->
               <h3 class="project-title">GrowthSchool Platform Redesign</h3>
               <p class="project-description">Led the end-to-end redesign of the GrowthSchool platform, focusing on enhancing the user journey.</p>
               <div class="project-tags">
@@ -106,15 +94,13 @@
               <img src="src/images/placeholder4.jpg" alt="GrowthSchool project screenshot" class="project-thumbnail">
             </div>
           </div>
-        </a> <!-- Link closed -->
+        </a>
       </div>
     </section>
 
-    <!-- Random Projects Section (Keeps the grid layout) -->
     <section class="random-projects">
       <h2>Other Projects</h2>
       <div class="projects">
-        <!-- Add random project snippets here -->
         <div class="project-card">Fun Little Tool</div>
         <div class="project-card">CSS Playground</div>
       </div>

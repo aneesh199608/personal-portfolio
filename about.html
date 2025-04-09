@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Aneesh AR</title>
   <script>
-    // Apply saved theme immediately before paint
     (function () {
       const savedTheme = localStorage.getItem("theme") || "dark";
       document.documentElement.setAttribute("data-theme", savedTheme);
@@ -13,22 +12,19 @@
   </script>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./src/components/Navbar/Navbar.css" />
-  <!-- Add other relevant CSS if needed, e.g., for specific components -->
 </head>
 <body>
   <header id="navbar-container"></header>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero">
-      <img src="https://via.placeholder.com/120" alt="Placeholder image" class="hero-image" />
+      <img src="./src/images/elementor-placeholder-image.webp" alt="Placeholder image" class="hero-image" />
       <div class="hero-text">
         <h1>About Me</h1>
         <p>A brief introduction about yourself. Passionate about creating intuitive and engaging digital experiences.</p>
       </div>
     </section>
 
-    <!-- Content Section -->
     <section class="about-content">
       <h2>My Journey</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

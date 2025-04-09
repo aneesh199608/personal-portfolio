@@ -6,7 +6,6 @@ export function preloadProjectPages() {
       fetch(href)
         .then(response => {
           if (response.ok) {
-            // Cache the response
             return response.text();
           }
           throw new Error(`Failed to preload ${href}`);

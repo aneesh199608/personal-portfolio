@@ -6,20 +6,22 @@ export function createNavbar(container) {
   const navbar = document.createElement('nav');
   navbar.className = 'navbar';
 
-  // Logo
   const logo = document.createElement('div');
   logo.className = 'logo';
   logo.textContent = 'Aneesh';
   navbar.appendChild(logo);
 
-  // Navigation Links
   const navLinks = document.createElement('ul');
   navLinks.className = 'nav-links';
 
+  const pathSegments = window.location.pathname.split('/').filter(segment => segment !== '' && segment !== 'index.html');
+  const depth = pathSegments.length;
+  const prefix = '../'.repeat(depth);
+
   const links = [
-    { text: 'Home', href: 'index.html' }, // Updated href
-    { text: 'Work', href: 'index.html#work' }, // Keep linking to section on home page
-    { text: 'About', href: 'about.html' }, // Updated href
+    { text: 'Home', href: `${prefix}index.html` },
+    { text: 'Work', href: `${prefix}index.html#work` },
+    { text: 'About', href: `${prefix}about.html` },
     { text: 'Resume', href: 'https://your-drive-resume-link', target: '_blank' }
   ];
 
@@ -35,13 +37,11 @@ export function createNavbar(container) {
 
   navbar.appendChild(navLinks);
 
-  // Theme Toggle Button
   const themeToggle = document.createElement('button');
   themeToggle.id = 'themeToggle';
   themeToggle.textContent = '🌓';
   navbar.appendChild(themeToggle);
 
-  // Insert into container
   if (container) {
     container.appendChild(navbar);
   }
