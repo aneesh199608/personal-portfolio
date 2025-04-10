@@ -2,7 +2,7 @@
 import './styles.css';
 import './src/components/NavRail/style.css'; // Import NavRail styles
 import { createNavbar } from './src/components/NavRail/index.js';
-import avatarUrl from './src/images/aneesh-3d-avatar.png'; // Import the image
+import { registerImages } from './src/utils/imageLoader.js';
 
 function applySavedTheme() {
   const savedTheme = localStorage.getItem("theme") || "dark";
@@ -43,3 +43,10 @@ function preloadProjectPages() {
     }
   });
 }
+
+// Import your images
+import avatar from './src/images/aneesh-3d-avatar.png';
+registerImages({
+  avatar,
+});
+
