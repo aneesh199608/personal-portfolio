@@ -1,39 +1,26 @@
-import './styles.css'; // Import global styles
-import './src/components/Navbar/Navbar.css'; // Import Navbar styles
-// Add other CSS imports if needed (e.g., projects.css, Hero.css)
-import './src/projects/projects.css';
-// import './src/components/Hero/Hero.css'; // Assuming you might have this from previous task
-
-import { createNavbar } from './src/components/Navbar/Navbar.js';
+// script.js
+import './styles.css';
+import { createNavbar } from './src/components/NavRail/index.js';
 import { preloadProjectPages } from './src/projects/projects.js';
 
-/**
- * Applies the saved theme from localStorage immediately on script load.
- */
 function applySavedTheme() {
-  const savedTheme = localStorage.getItem("theme");
-  const themeToApply = savedTheme ? savedTheme : 'dark';
-  document.documentElement.setAttribute("data-theme", themeToApply);
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  document.documentElement.setAttribute("data-theme", savedTheme);
 }
 
-/**
- * Toggles the theme between 'dark' and 'light' and saves the preference.
- */
-export function toggleTheme() {
+function toggleTheme() {
   const html = document.documentElement;
-  const currentTheme = html.getAttribute("data-theme");
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-  html.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
+  const current = html.getAttribute("data-theme");
+  const next = current === "dark" ? "light" : "dark";
+  html.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
 }
 
 applySavedTheme();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const navbarContainer = document.getElementById('navbar-container');
-  if (navbarContainer) {
-    createNavbar(navbarContainer, toggleTheme); // Pass toggleTheme
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  const navContainer = document.getElementById('navbar-container');
+  if (navContainer) createNavbar(navContainer, toggleTheme);
 
   preloadProjectPages();
 });

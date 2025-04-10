@@ -34,8 +34,8 @@ export default {
       inject: 'body',
     }),
     new HtmlWebpackPlugin({
-      template: 'src/projects/growthschool.html',
-      filename: 'src/projects/growthschool.html',
+      template: 'src/projects/project-1.html',
+      filename: 'src/projects/project-1.html',
       inject: 'body',
     }),
     new MiniCssExtractPlugin({
@@ -57,6 +57,13 @@ export default {
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[hash][ext][query]' // Custom output folder for images
+        }
       },
     ],
   },

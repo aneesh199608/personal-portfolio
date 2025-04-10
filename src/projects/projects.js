@@ -1,18 +1,19 @@
+// src/projects/projects.js
+
+/**
+ * Preloads linked project pages for faster navigation.
+ */
+import './projects.css';
+
 export function preloadProjectPages() {
-  const projectLinks = document.querySelectorAll('.project-card-link');
-  projectLinks.forEach(link => {
+  const links = document.querySelectorAll('.project-card-link');
+  links.forEach(link => {
     const href = link.getAttribute('href');
     if (href) {
-      fetch(href)
-        .then(response => {
-          if (response.ok) {
-            return response.text();
-          }
-          throw new Error(`Failed to preload ${href}`);
-        })
-        .catch(error => {
-          console.error('Preloading error:', error);
-        });
+      const linkTag = document.createElement('link');
+      linkTag.rel = 'prefetch';
+      linkTag.href = href;
+      document.head.appendChild(linkTag);
     }
   });
 }
