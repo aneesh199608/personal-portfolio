@@ -14,9 +14,9 @@ export function createNavbar(container, toggleThemeCallback) {
   ul.className = 'nav-destinations';
 
   const links = [
-    { label: 'Home', icon: '🏠', href: '/index.html' },
-    { label: 'Projects', icon: '🗂️', href: '/index.html#work' },
-    { label: 'About', icon: '📖', href: '/about.html' },
+    { label: 'Home', icon: '🏠', href: 'index.html' },
+    { label: 'Projects', icon: '🗂️', href: 'index.html#work' },
+    { label: 'About', icon: '📖', href: 'about.html' },
     { label: 'Resume', icon: '↗️', href: 'https://your-drive-resume-link', target: '_blank' }
   ];
 

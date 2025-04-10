@@ -6,6 +6,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const isDev = process.env.NODE_ENV === 'development';
 
 export default {
   entry: './script.js',
@@ -13,14 +14,12 @@ export default {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/', // Changed to '/'
+    publicPath: isDev ? '/' : '/personal-portfolio/',
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, '.'),
-      publicPath: '/', 
+      directory: path.resolve(__dirname, 'dist'),
     },
-    // historyApiFallback: true,
     open: true,
     compress: true,
     port: 8080,
@@ -28,17 +27,18 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
-      // inject: 'body', // Removed inject: 'body'
+      filename: 'index.html',
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'about.html',
       filename: 'about.html',
-      // inject: 'body', // Removed inject: 'body'
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: 'project1.html',
       filename: 'project1.html',
-      // inject: 'body', // Removed inject: 'body'
+      inject: 'body',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -64,11 +64,11 @@ export default {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[hash][ext][query]' // Custom output folder for images
-        }
+          filename: 'assets/[hash][ext][query]',
+        },
       },
     ],
   },
   devtool: 'source-map',
-  mode: 'development',
+  mode: isDev ? 'development' : 'production',
 };
