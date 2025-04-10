@@ -1,44 +1,65 @@
-.navbar {
+.nav-rail {
+  position: fixed; /* Pin to viewport */
+  top: 1rem; /* Add top spacing */
+  left: 1rem; /* Add left spacing */
+  bottom: 1rem; /* Add bottom spacing */
+  height: calc(100vh - 2rem); /* Adjust height for top/bottom spacing */
+  width: 80px; /* Fixed width */
+  z-index: 1000; /* Ensure it's above content */
+  padding-top: 44px;
+  padding-bottom: 56px;
+  background: var(--bg-color);
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  border-radius: 16px;
+  border: 1px solid rgba(var(--text-color-rgb), 0.2);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem 1.5rem;
-
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 600px;
-  width: 90%;
-  z-index: 1000;
-  background-color: rgba(var(--bg-color-rgb), 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 12px;
-  border: 1px solid rgba(var(--text-color-rgb), 0.1);
+  justify-content: space-between;
 }
 
-.nav-links {
-  list-style: none;
+.nav-destinations {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
-.nav-links a {
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--text-color-muted);
+  font-size: 12px;
   font-weight: 500;
-  transition: opacity 0.3s;
+  text-align: center;
+  border-radius: 12px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.nav-links a:hover {
-  opacity: 0.7;
+.nav-item:hover {
+  background: rgba(var(--text-color-rgb), 0.05);
+  color: var(--text-color);
 }
 
-#themeToggle {
+.nav-icon {
+  font-size: 18px;
+}
+
+.nav-label {
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.nav-theme-toggle {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 12px;
+  color: var(--text-color-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
-  color: var(--text-color);
 }

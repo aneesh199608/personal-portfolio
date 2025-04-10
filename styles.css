@@ -1,3 +1,10 @@
+/* Global Image Reset */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,35 +28,62 @@
   }
   
   body {
+    display: flex;
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
-    padding-top: 4rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
   }
-  
+
+  /* Remove App Container Styles if they exist */
+  /* .app-container { ... } */
+
+  /* Main Content Styles */
+  main {
+    flex: 1;
+    margin-left: 96px; /* 80px width + 16px left spacing */
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  #app-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+  }
+
+  /* Hero Section Styles */
   .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 0 1rem;
   }
-  
+
+  /* Added Hero Image specific styles */
   .hero-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1.2rem;
+    width: 160px; /* Constrain size */
+    height: 160px; /* Make height equal for circle */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure image covers the area */
+    margin-bottom: 2rem; /* Add space below */
   }
-  
-  .hero-text h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+
+  /* Added About Image specific styles (copied from .hero-image) */
+  .about-image {
+    width: 160px; /* Constrain size */
+    height: 160px; /* Make height equal for circle */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure image covers the area */
+    margin-bottom: 2rem; /* Add space below */
+  }
+
+  .hero-text {
+    max-width: 600px;
   }
   
   .project-card-link {
@@ -80,8 +114,6 @@
   }
   
   footer {
-    margin-top: 5rem;
-    padding: 2rem 0;
-    text-align: center;
-    font-size: 0.875rem;
+    margin-left: 96px;
+    padding: 1rem 2rem;
   }

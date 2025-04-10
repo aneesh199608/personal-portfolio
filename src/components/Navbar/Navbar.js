@@ -4,46 +4,48 @@
  */
 // Removed import { toggleTheme } from '../../script.js';
 
-export function createNavbar(container, toggleThemeCallback) { // Added toggleThemeCallback parameter
-  const navbar = document.createElement('nav');
-  navbar.className = 'navbar';
+import './Navbar.css';
 
-  const logo = document.createElement('div');
-  logo.className = 'logo';
-  logo.textContent = 'Aneesh';
-  navbar.appendChild(logo);
+export function createNavbar(container, toggleThemeCallback) {
+  const nav = document.createElement('nav');
+  nav.className = 'nav-rail';
 
-  const navLinks = document.createElement('ul');
-  navLinks.className = 'nav-links';
+  const destinations = document.createElement('div');
+  destinations.className = 'nav-destinations';
 
   const links = [
-    { text: 'Home', href: '/index.html' },
-    { text: 'Work', href: '/index.html#work' },
-    { text: 'About', href: '/about.html' },
-    { text: 'Resume', href: 'https://your-drive-resume-link', target: '_blank' }
+    { label: 'Home', icon: '🏠', href: '/index.html' },
+    { label: 'Projects', icon: '🗂️', href: '/index.html#work' },
+    { label: 'About', icon: '📖', href: '/about.html' },
+    { label: 'Resume', icon: '↗️', href: 'https://your-drive-resume-link', target: '_blank' }
   ];
 
   links.forEach(link => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = link.href;
-    a.textContent = link.text;
-    if (link.target) a.target = link.target;
-    li.appendChild(a);
-    navLinks.appendChild(li);
+    const item = document.createElement('a');
+    item.className = 'nav-item';
+    item.href = link.href;
+    if (link.target) item.target = link.target;
+
+    item.innerHTML = `
+      <div class="nav-icon">${link.icon}</div>
+      <div class="nav-label">${link.label}</div>
+    `;
+
+    destinations.appendChild(item);
   });
 
-  navbar.appendChild(navLinks);
+  nav.appendChild(destinations);
 
-  const themeToggle = document.createElement('button');
-  themeToggle.id = 'themeToggle';
-  themeToggle.textContent = '🌓';
-  themeToggle.addEventListener('click', toggleThemeCallback); // Use the passed callback
-  navbar.appendChild(themeToggle);
+  const toggleButton = document.createElement('button');
+  toggleButton.className = 'nav-theme-toggle';
+  toggleButton.innerHTML = '<span class="nav-icon">☀️</span><div class="nav-label">Theme</div>';
+  toggleButton.addEventListener('click', toggleThemeCallback);
+
+  nav.appendChild(toggleButton);
 
   if (container) {
-    container.appendChild(navbar);
+    container.appendChild(nav);
   }
 
-  return navbar;
+  return nav;
 }
