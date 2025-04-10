@@ -1,7 +1,8 @@
 // script.js
 import './styles.css';
+import './src/components/NavRail/style.css'; // Import NavRail styles
 import { createNavbar } from './src/components/NavRail/index.js';
-import { preloadProjectPages } from './src/projects/projects.js';
+import avatarUrl from './src/images/aneesh-3d-avatar.png'; // Import the image
 
 function applySavedTheme() {
   const savedTheme = localStorage.getItem("theme") || "dark";
@@ -23,4 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navContainer) createNavbar(navContainer, toggleTheme);
 
   preloadProjectPages();
+
+  const avatarImage = document.getElementById('avatar-image'); // Get the image element by ID
+  if (avatarImage) {
+    avatarImage.src = avatarUrl; // Set the src to the imported URL
+  }
 });
+
+function preloadProjectPages() {
+  const links = document.querySelectorAll('.project-card-link');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href) {
+      const linkTag = document.createElement('link');
+      linkTag.rel = 'prefetch';
+      linkTag.href = href;
+      document.head.appendChild(linkTag);
+    }
+  });
+}

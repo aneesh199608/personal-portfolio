@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aneesh AR</title>
-    <link rel="stylesheet" href="styles.css" />
     <script>
       (function () {
         const savedTheme = localStorage.getItem("theme") || "dark";
@@ -21,7 +20,7 @@
       <div class="content-wrapper">
         <main>
           <section class="hero">
-            <img src="src/images/aneesh-3d-avatar.png" alt="Aneesh avatar" class="hero-image" />
+            <img id="avatar-image" src="src/images/aneesh-3d-avatar.png" alt="Aneesh avatar" class="hero-image" />
             <div class="hero-text">
               <h1>Hello, I'm Aneesh</h1>
               <p>I design beautiful interfaces and engineer delightful experiences using code + AI.</p>
@@ -33,7 +32,7 @@
             <div class="projects work-projects">
               
               <!-- Projects here -->
-              <a href="src/projects/project-1.html" class="project-card-link">
+              <a href="project1.html" class="project-card-link">
                 <div class="project-card project-layout-split">
                   <div class="project-details">
                     <h3 class="project-title">Optimizing Course Discovery for Growth</h3>

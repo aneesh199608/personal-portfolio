@@ -13,12 +13,14 @@ export default {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath: '/', // Changed to '/'
   },
   devServer: {
     static: {
       directory: path.resolve(__dirname, '.'),
+      publicPath: '/', 
     },
-    historyApiFallback: true,
+    // historyApiFallback: true,
     open: true,
     compress: true,
     port: 8080,
@@ -26,17 +28,17 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
-      inject: 'body',
+      // inject: 'body', // Removed inject: 'body'
     }),
     new HtmlWebpackPlugin({
       template: 'about.html',
       filename: 'about.html',
-      inject: 'body',
+      // inject: 'body', // Removed inject: 'body'
     }),
     new HtmlWebpackPlugin({
-      template: 'src/projects/project-1.html',
-      filename: 'src/projects/project-1.html',
-      inject: 'body',
+      template: 'project1.html',
+      filename: 'project1.html',
+      // inject: 'body', // Removed inject: 'body'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
