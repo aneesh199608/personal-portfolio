@@ -17,9 +17,9 @@ export function createNavbar(container, toggleThemeCallback) { // Added toggleTh
   navLinks.className = 'nav-links';
 
   const links = [
-    { text: 'Home', href: 'index.html' },
-    { text: 'Work', href: 'index.html#work' },
-    { text: 'About', href: 'about.html' },
+    { text: 'Home', href: '/index.html' },
+    { text: 'Work', href: '/index.html#work' },
+    { text: 'About', href: '/about.html' },
     { text: 'Resume', href: 'https://your-drive-resume-link', target: '_blank' }
   ];
 
